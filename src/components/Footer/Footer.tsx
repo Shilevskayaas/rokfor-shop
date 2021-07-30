@@ -15,14 +15,14 @@ const Footer = () => {
             </a>
           </div>
           <div className="footer__info">
-            Проект подготовлен в рамках курса JavaScript Pro в{' '}
+            Проект подготовлен в рамках курса JavaScript Pro в{" "}
             <a
               href="https://fpk.unn.ru/kursy-programmirovaniya/kursy-programmirovaniya-na-javascript/prodvinutyj-kurs-javascript/"
               target="_blank"
             >
               ФПК ННГУ
-            </a>{' '}
-            под руководством компании{' '}
+            </a>{" "}
+            под руководством компании{" "}
             <a href="https://lad24.ru/" target="_blank">
               LAD
             </a>
@@ -30,11 +30,8 @@ const Footer = () => {
           <div className="footer__contact">8 800 123 45 67</div>
         </div>
       </div>
-      <a href="#">
-        <input type="submit" className="footer__button" value="Хочу скидку!" />
-      </a>
     </footer>
-  )
-}
+  );
+};
 
-export default Footer
+export default Footer;
