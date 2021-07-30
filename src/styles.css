@@ -199,8 +199,8 @@ a:visited {
   flex: 0 0 200px;
 }
 .item__image img {
-  height: 200px;
-  width: 200px;
+  height: 160px;
+  width: 160px;
   border: 2.5px solid #f8c305;
 }
 .item__body {
@@ -214,15 +214,15 @@ a:visited {
 .item__title {
   color: #d23c24;
   font-size: 24px;
-  margin: 0px 0px 15px 0px;
+  margin: 0px 0px 10px 0px;
 }
 .item__text {
   color: #000;
-  font-size: 16px;
-  line-height: 24px;
+  font-size: 14px;
+  line-height: 20px;
 }
 .item__icons {
-  font-size: 35px;
+  font-size: 30px;
   text-shadow: 2px 2px 0 #fbc200;
   padding: 10px;
   cursor: pointer;
