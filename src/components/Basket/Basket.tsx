@@ -1,35 +1,52 @@
-import { useState } from 'react'
-import { useHistory } from 'react-router-dom'
-import { itemObject } from '../../types'
+import { useState } from "react";
+import { useHistory } from "react-router-dom";
+import { itemObject } from "../../types";
 
 const Basket = (props: { selectedItem: itemObject }) => {
-  const history = useHistory()
-  const { selectedItem } = props
-  const [isSubmitted, updateSubmitStatus] = useState(false)
-  const [quantity, updateQuantity] = useState('1')
-  const [phone, updatePhone] = useState('')
-  const [adress, updateAdress] = useState('')
-  const [desc, updateDesc] = useState('')
+  const history = useHistory();
+  const { selectedItem } = props;
+  const [isSubmitted, updateSubmitStatus] = useState(false);
+  const [isPopup, updatePopupStatus] = useState(false);
+  const [quantity, updateQuantity] = useState("1");
+  const [phone, updatePhone] = useState("");
+  const [adress, updateAdress] = useState("");
+  const [desc, updateDesc] = useState("");
 
   const onFormReset = () => {
-    updateQuantity('1')
-    updatePhone('')
-    updateAdress('')
-    updateDesc('')
-  }
+    updateQuantity("1");
+    updatePhone("");
+    updateAdress("");
+    updateDesc("");
+  };
 
   const onSubmit = () => {
-    updateSubmitStatus(true)
-  }
+    updateSubmitStatus(true);
+  };
+
+  const onPopup = () => {
+    updatePopupStatus(true);
+  };
 
   return (
     <div className="basket">
+      <a href="#">
+        <input
+          type="submit"
+          className="basket__popup"
+          value="Хочу скидку!"
+          onClick={onPopup}
+        />
+      </a>
       <div className="basket__block">
         {!selectedItem.itemName && !isSubmitted && (
-          <div className="basket__form" style={{ textAlign: 'center' }}>
+          <div className="basket__form" style={{ textAlign: "center" }}>
             <div>Ваша корзина пока пуста :(</div>
             <div className="basket__button basket__button-special">
-              <input value="К покупкам!" style={{ textAlign: 'center' }} onClick={() => history.push('/')} />
+              <input
+                value="К покупкам!"
+                style={{ textAlign: "center" }}
+                onClick={() => history.push("/")}
+              />
             </div>
           </div>
         )}
@@ -122,13 +139,24 @@ const Basket = (props: { selectedItem: itemObject }) => {
               успешно отправлен по указанному Вами адресу
             </div>
             <div className="basket__button basket__button-special">
-              <input value="Хочу еще!" onClick={() => history.push('/')} />
+              <input
+                value="Хочу еще!"
+                style={{ textAlign: "center" }}
+                onClick={() => history.push("/")}
+              />
             </div>
           </div>
         )}
       </div>
+      {isPopup && (
+        <input
+          type="submit"
+          className="basket__popup"
+          value="Скажи ПРИВЕТ на кассе"
+        />
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default Basket
+export default Basket;
